@@ -16,8 +16,9 @@ public class programmers_210521 {
 	                if(part.equals(completion[i])) {
 	                    //true이면 완주를 못한것 false이면 완주한것
 	                	bool = false;
-	                	//완주한 사람들은 빈값으로 넣는다. 그렇게 되면 completion에는 완주하지 못한 사람들만 남는다.
+	                	//완주한 사람들은 빈값으로 넣는다. 그렇게 되면 completion에는 완주하지 못한 사람들만 남는다. 
 	                    completion[i]=""; 
+	                    // 반복문을 나간다.
 	                    break; 
 	                } 
 	            } 
