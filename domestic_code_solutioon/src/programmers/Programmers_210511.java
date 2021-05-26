@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.Arrays;
 
-public class programmers_210511 {
+public class Programmers_210511 {
 	
 	class Solution {
 	    public int[] solution(int[] array, int[][] commands) {

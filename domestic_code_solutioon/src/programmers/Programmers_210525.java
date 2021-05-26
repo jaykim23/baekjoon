@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 
 
-public class programmers_210525 {
+public class Programmers_210525 {
 
 //  출처 : https://programmers.co.kr/learn/courses/30/lessons/68644?language=java
 //	정수 배열 numbers가 주어집니다. 

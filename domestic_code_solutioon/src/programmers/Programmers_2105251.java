@@ -2,7 +2,7 @@ package programmers;
 
 import java.util.TreeSet;
 
-public class programmers_2105251{
+public class Programmers_2105251{
 	public static void main(String[] args) {
 			//210525 다른 풀이
 			int[] numbers = {1,2,3};

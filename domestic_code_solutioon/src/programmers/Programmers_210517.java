@@ -1,6 +1,6 @@
 package programmers;
 
-public class programmers_210517 {
+public class Programmers_210517 {
 
 	class Solution {
 		public boolean solution(String s) {

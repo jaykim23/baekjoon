@@ -1,6 +1,6 @@
 package programmers;
 
-public class programmers_210521 {
+public class Programmers_210521 {
 	
 	class Solution {
 	    public String solution(String[] participant, String[] completion) {
