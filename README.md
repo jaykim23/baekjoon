@@ -1,1 +1,1 @@
-# baekjoon & Programmers 1 Day 1 Commit
+# Baekjoon & Programmers 1 Day 1 Commit
