@@ -4,28 +4,45 @@ import java.util.ArrayList;
 
 public class Programmers_210610 {
 	    public int solution(int[][] board, int[] moves) {
+	    	//뽑은 것을 저장하는 배열 선언
 	        ArrayList<Integer> list = new ArrayList<Integer>();
+	        //답 변수 선언
 	        int answer = 0;
+	        //중복되는 숫자 카운트하는 변수.
 	        int erase_count = 0;
+	        //moves의 배열 반복
 	        for(int i=0; i<moves.length;i++) {
+	        	//주어진 moves를 x, 보드의 y축을 j 로하고 반복문으로 해당 위치의 값을 비교하기 위한 반복
 				for(int j=0;j<board.length;j++) {
+					//해당 위치의 값이 0이 아닐 경우
 					if(board[j][moves[i]-1] != 0) {
+						//이전값과 비교하기 위해서 선제적으로 현재list의 값이 있는지 여부를 판단
+						//비었을 경우
 						if(list.isEmpty()) {
+							//값을 바로 넣는다.
 							list.add(board[j][moves[i]-1]);
+						//안비었을 경우
 						}else {
+							//리스트의 마지막값과 넣을 값을 비교한다.리스트값이 다를경우 리스트에 넣는다.
 							if(board[j][moves[i]-1] != list.get(list.size()-1)) {
 								list.add(board[j][moves[i]-1]);
+							//같을 경우 리스트 마지막 값을 지운다.	
 							}else {
 								list.remove(list.size()-1);
+								//지워진 숫자의 갯수를 카운트한다.
 								erase_count++;
 							}
 						}
+						//보드에서 리스트에 넣은뒤 해당 위치값에 0을 넣어 없다는 것을 표시한다.
 						board[j][moves[i]-1] = 0;
+						//리스트에 넣고 해당 위치의 값도 0으로 바꿨으니 반복을 멈춘다.
 						break;
 					}
 				}
 			}
+	        //답에 지워진 숫자의 *2를 하므로써 없어진 리스트내의 블록의 갯수를 저장한다.
 			answer = erase_count*2;
+			//답을 리턴한다.
 	        return answer;
 	    }
 //	public static void main(String[] args) {
