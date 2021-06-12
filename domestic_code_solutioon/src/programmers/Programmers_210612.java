@@ -56,7 +56,59 @@ public class Programmers_210612 {
 	//	new_id는 길이 1 이상 1,000 이하인 문자열입니다.
 	//	new_id는 알파벳 대문자, 알파벳 소문자, 숫자, 특수문자로 구성되어 있습니다.
 	//	new_id에 나타날 수 있는 특수문자는 -_.~!@#$%^&*()=+[{]}:?,<>/ 로 한정됩니다.
-	public static void main(String[] args) {
-		
-	}
+	public String solution(String new_id) {
+        String answer="";
+        //소문자로 모두 치환
+        new_id = new_id.toLowerCase();
+        //해당없는 특수문자 제거
+        new_id = remove_special(new_id);
+        //연속된 .제거
+        new_id = remove_consecutve(new_id);
+        //맨앞과 맨뒤 .제거
+        new_id = remove_headTail(new_id);
+        //아이디 길이가 0일때 id에 a 넣기
+        if(new_id.length()==0) {
+            new_id += "a";
+        }
+        //아이디 길이가 16이상일 경우 앞에 15자리까지 자르기
+        if(new_id.length() >= 16) {
+            new_id = remove_15over(new_id);
+            //다시 한번 .이 있는지 없는지 비교하기
+            new_id = remove_headTail(new_id);
+        }
+        //길이가 2이하일때 마지막 글자 3까지 연장하기
+        if(new_id.length()<=2) {
+            while(new_id.length()<3) {
+            	//마지막 글자를 길이3까지 반복한다.
+                new_id += new_id.charAt(new_id.length()-1);
+            }
+        }
+        //답에 id를 넣는다.
+        answer = new_id;
+        //리턴한다.
+        return answer;
+
+    }
+	//특수문자 삭제 메소드
+    public static String remove_special(String new_id) {
+        new_id = new_id.replaceAll("[^-_.a-z0-9]", "");
+        return new_id;
+    }
+    //연속된. 삭제 메소드
+    public static String remove_consecutve(String new_id) {
+        new_id = new_id.replaceAll("[.]{2,}", ".");
+        return new_id;
+    }
+    //맨앞과 끝에 .지우기 메소드
+    public static String remove_headTail(String new_id) {
+        new_id = new_id.replaceAll("^[.]|[.]$", "");
+        return new_id;
+    }
+    //15글자 초과된것 지우기 메소드
+    public static String remove_15over(String new_id) {
+        new_id = new_id.substring(0,15);
+        return new_id;
+    }
+	
+	
 }
